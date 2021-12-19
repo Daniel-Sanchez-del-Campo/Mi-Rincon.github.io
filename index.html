@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta http-equiv="X-UA.Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./index.css">
+  <title>El Rincon del Bisutero</title>
+  <style>
+    .slide {
+				position: relative;
+				box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+				margin-top: 26px;
+			}
+
+			.slide-inner {
+				position: relative;
+				overflow: hidden;
+				width: 100%;
+				height: calc( 250px + 3em);
+				padding-left: 200px;
+			}
+
+			.slide-open:checked + .slide-item {
+				position: static;
+				opacity: 100;
+			}
+
+			.slide-item {
+				position: absolute;
+				opacity: 0;
+				-webkit-transition: opacity 0.6s ease-out;
+				transition: opacity 0.6s ease-out;
+			}
+
+			.slide-item img {
+				display: block;
+				height: auto;
+				max-width: 60%;
+        padding-left: 300px;
+			}
+
+			.slide-control {
+				background: rgba(245, 14, 233, 0.966);
+				border-radius: 50%;
+				color: #fff;
+				cursor: pointer;
+				display: none;
+				font-size: 40px;
+				height: 40px;
+				line-height: 35px;
+				position: absolute;
+				top: 50%;
+				-webkit-transform: translate(0, -50%);
+				cursor: pointer;
+				-ms-transform: translate(0, -50%);
+				transform: translate(0, -50%);
+				text-align: center;
+				width: 40px;
+				z-index: 10;
+			}
+
+			.slide-control.prev {
+				left: 2%;
+			}
+
+			.slide-control.next {
+				right: 2%;
+			}
+
+			.slide-control:hover {
+				background: rgba(202, 2, 252, 0.541);
+				color: #aaaaaa;
+			}
+
+			#slide-1:checked ~ .control-1,
+			#slide-2:checked ~ .control-2,
+			#slide-3:checked ~ .control-3 {
+				display: block;
+			}
+
+			.slide-indicador {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				position: absolute;
+				bottom: 2%;
+				left: 0;
+				right: 0;
+				text-align: center;
+				z-index: 10;
+			}
+
+			.slide-indicador li {
+				display: inline-block;
+				margin: 0 5px;
+			}
+
+			.slide-circulo {
+				color: #828282;
+				cursor: pointer;
+				display: block;
+				font-size: 35px;
+			}
+
+			.slide-circulo:hover {
+				color: #aaaaaa;
+			}
+
+			#slide-1:checked ~ .control-1 ~ .slide-indicador li:nth-child(1) .slide-circulo,
+			#slide-2:checked ~ .control-2 ~ .slide-indicador li:nth-child(2) .slide-circulo,
+			#slide-3:checked ~ .control-3 ~ .slide-indicador li:nth-child(3) .slide-circulo {
+				color: #428bca;
+			}
+
+			#titulo {
+				width: 100%;
+				position: absolute;
+				padding: 0px;
+				margin: 0px auto;
+				text-align: center;
+				font-size: 27px;
+				color: rgba(255, 255, 255, 1);
+				font-family: 'Open Sans', sans-serif;
+				z-index: 9999;
+				text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33), -1px 0px 2px rgba(255, 255, 255, 0);
+			}
+  </style>
+  </head>
+  <header>
+	<div class="overlay">
+		<h1>El Rincon del Bisutero</h1>
+		<p>Tienda online de Bisuteria</p>
+			<br>
+
+</header>
+
+<body>
+	<div id="header">
+		<ul class="nav">
+		  <li><a href="./index.html"><b>Inicio</b></a></li>
+		  <li><a href=""><b>Nuestros productos</b></a>
+			<ul>
+			  <li><a href="./Anillos.html">- Anillos</a></li>
+			  <li><a href="./Collares.html">- Collares</a></li>
+			  <li><a href="./Pulseras.html">- Pulseras</a></li>
+				<ul>
+				  <li><a href="">Submenu1</a></li>
+				  <li><a href="">Submenu2</a></li>
+				  <li><a href="">Submenu3</a></li>
+				</ul>
+			  </li>
+			</ul>
+		  </li>
+	  </div>
+  </br></br></br></br></br></br></br>
+  <div class="slide">
+    <div class="slide-inner">
+      <input class="slide-open" type="radio" id="slide-1" name="slide" aria-hidden="true" hidden="" checked="checked">
+      <div class="slide-item">
+        <img src="https://cdn.shopify.com/s/files/1/2573/2878/articles/tiger-mens-ring.jpg?v=1560526609">
+      </div>
+      <input class="slide-open" type="radio" id="slide-2" name="slide" aria-hidden="true" hidden="">
+      <div class="slide-item">
+        <img src="https://cdn.shopify.com/s/files/1/2592/6488/articles/51044918668_b4b3829a52_c_1200x1200.jpg?v=1617002875">
+      </div>
+      <input class="slide-open" type="radio" id="slide-3" name="slide" aria-hidden="true" hidden="">
+      <div class="slide-item">
+        <img src="https://media.gq.com.mx/photos/6046728b2a28aa03ee1e83a3/master/w_1600%2Cc_limit/pulseras-82860025.jpg">
+      </div>
+      <label for="slide-3" class="slide-control prev control-1">‹</label>
+      <label for="slide-2" class="slide-control next control-1">›</label>
+      <label for="slide-1" class="slide-control prev control-2">‹</label>
+      <label for="slide-3" class="slide-control next control-2">›</label>
+      <label for="slide-2" class="slide-control prev control-3">‹</label>
+      <label for="slide-1" class="slide-control next control-3">›</label>
+      <ol class="slide-indicador">
+        <li>
+          <label for="slide-1" class="slide-circulo">•</label>
+        </li>
+        <li>
+          <label for="slide-2" class="slide-circulo">•</label>
+        </li>
+        <li>
+          <label for="slide-3" class="slide-circulo">•</label>
+        </li>
+      </ol>
+    </div>
+  </div>
+</br>
+  <p>-Esta es una tienda para los amantes de la bisuteria para hombre-</p>
+</br>
+  <p>-Aqui podra encontrar una gran cantidad de articulos para todos los gustos-</p>
+</br>
+<div class="container-a4">
+	<ul class="caption-style-4">
+		<li>
+			<img height="300px" width="303px" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQWSshCVlABYiOU5OpUjTT1qfI_p5wmownWS_g_sOdBrkLAcRsl" alt="">
+			<div class="caption">
+				<div class="blur"></div>
+				<div class="caption-text">
+					<h1>Anillo de GUESS</h1>
+					<p>39,00$</p>
+				</div>
+			</div>
+		</li>
+	
+		<li>
+			<img  height="300px" width="304px" src="https://m.media-amazon.com/images/I/51N0lmur8gL._AC_SS450_.jpg" alt="">
+			<div class="caption">
+				<div class="blur"></div>
+				<div class="caption-text">
+					<h1>Collar GUESS</h1>
+					<p>60,00$</p>
+				</div>
+			</div>
+		</li>
+		<li>
+			<img  height="300px" width="304px" src="https://img01.ztat.net/article/spp-media-p1/83fe4beb8ab73422a1acbc63980fb4c9/b093f7616fe04d2b93eff522e957f0c4.jpg?imwidth=1800" alt="">
+			<div class="caption">
+				<div class="blur"></div>
+				<div class="caption-text">
+					<h1>Pulsera de cadena</h1>
+					<p>20,00$</p>
+				</div>
+			</div>
+		</li>
+		<li>
+			<img height="300px" width="304px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrMQPgDvB72HjFXUWWnN2Wm23f6_ANxqOJYg&usqp=CAU" alt="">
+			<div class="caption">
+				<div class="blur"></div>
+				<div class="caption-text">
+					<h1>Collar con candado</h1>
+					<p>20,00$</p>
+				</div>
+			</div>
+		</li>
+		<li>
+			<img height="300px" width="304px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfAvImVKWHdvstv2RNuaDQnPeBwlcekmGqWw&usqp=CAU" alt="">
+			<div class="caption">
+				<div class="blur"></div>
+				<div class="caption-text">
+					<h1>Anillo cadenado</h1>
+					<p>13,00$</p>
+				</div>
+			</div>
+		</li>
+	</ul>
+</br></br></br>
+</div>
+<p>-Muchos más productos te esperan, ve a echarles un ojo-</p>
+</br></br></br></br>
+</body>
+<footer>
+	<div class="text-center" style="background-color: white;">
+		© 2020 Copyright
+	  </div>
+</footer>
